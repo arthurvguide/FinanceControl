@@ -83,6 +83,19 @@ def calculate_surplus_data(sales_row):
 
     return surplus_data
 
+def get_last_5_entries_sales():
+    """
+    Collect collumns of data from sales worksheet, 
+    collecting the last 5 entries for eache sandwich 
+    and return the data as a list of lists
+    """
+    sales = SHEET.worksheet("sales")
+
+    collumns = []
+    for ind in range(1,7):
+        collumn = sales.col_values(ind)
+        collumns.append(collumn)
+    pprint(collumns)
 
 def main():
     """
